@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root{
+--White: hsl(0, 0%, 100%);
+--Black: hsl(0, 0%, 0%);
+--Dark-Gray: hsl(0, 0%, 55%);
+--Very-Dark-Gray: hsl(0, 0%, 41%);
+}
+
+
+/* =========================RESET=============================== */
+
+button{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/* ==========================REUSABLE================================== */
+.section{
+    padding: 5% 11%;
+}
+
+body{
+    font-family: 'Alata', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* ============================HERO SECTION=============================== */
+.hero{
+    background-image: url(images/desktop/image-hero.jpg);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hamburger{
+    display: none;
+}
+
+.link{
+    color: var(--White);
+    font-size: 1.05rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.link::before{
+    content : '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--White);
+    bottom: -3px;
+    left: 50%;
+    transition: .3s;
+}
+
+.link:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+.hero-title{
+    border: 2px solid var(--White);
+    width: 660px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: 70px;
+    margin-top: 8rem;
+    color: var(--White);
+    padding: 2rem;
+    font-weight: normal;
+}
+
+/* ============================VR SECTION=============================== */
+h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--Black);
+}
+.VR{
+    display: flex;
+    align-items: center;
+}
+
+.VR-image-wrapper{
+    width: 50%;
+}
+
+.VR-about-wrapper{
+    width: 50%;
+    background: var(--White);
+    padding-left: 6rem;
+    padding-top: 6rem;
+    margin-top: 15%;
+}
+
+.VR-about-wrapper h2{
+    margin-bottom: 1.5rem;
+}
+
+p{
+    font-size: 1.03rem;
+    line-height: 29px;
+    color: var(--Very-Dark-Gray);
+    font-weight: bold;
+}
+
+/* ============================OUR CREATION SECTION=============================== */
+.our-creation{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.see-all-btn{
+   text-transform: uppercase;
+    font-family: 'Alata', sans-serif;
+    letter-spacing: 2px;
+    border: 1px solid var(--Black);
+    padding: .5rem 2rem;
+    transition: .5s;
+}
+
+.see-all-btn:hover{
+    border: 1px solid var(--Black);
+    background: var(--Black);
+    color: var(--White);
+}
+
+.see-all-btn.mobile{
+    display: none;
+}
+
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+}
+
+.grid-img-wrapper{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.grid-img{
+    width: 100%;
+    height: 100%;
+}
+
+.img-text{
+    position: absolute;
+    bottom: 2rem;
+    left: 3rem;
+    text-transform: uppercase;
+    color: var(--White);
+    font-size: 2rem;
+    font-weight: normal;
+    width: 170px;
+    z-index: 10;
+    transition: .5s;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    transition: .5s;
+}
+
+.grid-img-wrapper:hover .overlay{
+    background: rgba(255, 255, 255, 0.732);
+}
+
+.grid-img-wrapper:hover .img-text{
+    color: var(--Black);
+}
+
+
+/* ============================FOOTER SECTION=============================== */
+.footer{
+    width: 100%;
+    background-color: var(--Black);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    width: 150px;
+}
+
+.social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.social-icons.mobile{
+    display: none;
+}
+
+.icon{
+    width: 18px;
+}
+.icon-link{
+    position: relative;
+}
+
+.icon-link::before{
+    content : '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--White);
+    bottom: -3px;
+    left: 50%;
+    transition: .3s;
+}
+
+.icon-link:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+.footer-base{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* ==================RESPONSIVE FOR SMALLER SCREEN===================================== */
+@media (max-width: 600px){
+
+    .nav-bar{
+        margin-top: 1.5rem;
+    }
+    .section{
+        padding: 5% 2rem;
+    }
+
+    .hero{
+        background-image: url(images/mobile/image-hero.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 700px
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+        transition: .3s;
+    }
+
+    .hamburger.active{
+        opacity: 0;
+    }
+
+    .hero-title{
+        width: 100%;
+        font-size: 2.6rem;
+        line-height: 45px;
+        margin-top: 11rem;
+        padding: 1rem;
+    }
+
+    .VR{
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .VR-image-wrapper{
+        width: 100%;
+    }
+
+    .VR-img{
+        width: 100%;
+    }
+
+    .VR-about-wrapper{
+        width: 100%;
+        margin-top: 2rem;
+        padding-left: 0;
+        padding-top: 0;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1.15rem;
+    }
+
+    .our-creation{
+        justify-content: center;
+    }
+
+    .see-all-btn{
+        display: none;
+    }
+
+    .see-all-btn.mobile{
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+        margin-top: 2rem;
+    }
+
+    .header{
+        justify-content: center;
+    }
+
+    .footer-header{
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .grid{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .img-text{
+        left: 1rem;
+        bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .footer{
+        justify-content: center;
+        align-items: center;
+        padding-block: 3rem ;
+    }
+
+    .social-icons{
+        display: none;
+    }
+    
+    .social-icons.mobile{
+        display: flex;
+    }
+
+    .footer-links{
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .footer-base{
+        flex-direction: column;
+    }
+
+    .footer p{
+        font-size: .9rem;
+        margin-top: 1rem;
+    }
+
+    /* ============================MOBILE NAVBAR========================= */
+    .mobile-nav{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: -100vw;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        background: black;
+        padding: 5% 7.9%;
+        z-index: 20;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .mobile-nav.active{
+        opacity: 1;
+        left: 0;
+    }
+
+    .mobile-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 13rem;
+        margin-top: 1.5rem;
+    }
+
+    .mobile-link{
+        display: block;
+        color: var(--White);
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+    
+}
