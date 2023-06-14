@@ -222,6 +222,7 @@ p{
 
 .grid-img-wrapper:hover .img-text{
     color: var(--Black);
+    bottom: 3.5rem;
 }
 
 
